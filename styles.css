@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif; /* ممكن نبحث عن خط قريب من اللي في الصورة لو حابة */
+}
+
+body {
+  /* الخلفية الرئيسية: أسود غامق جداً */
+  background-color: #121212; /* أسود داكن جداً */
+  color: #E0E0E0; /* لون نص أساسي فاتح */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+.navigation ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  /* لون اللينكات في الهيدر: رمادي فاتح */
+  color: #A0A0A0;
+}
+
+.navigation a:hover {
+  /* لون الهوفر: بنفسجي زاهي */
+  color: #A36BFF; /* بنفسجي فاتح ومشرق */
+}
+
+hr {
+  opacity: 10%;
+  border-color: #404040; /* لون خط فاصل رمادي غامق */
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1200px;
+  /* ممكن نضيف خلفية شفافة لجزء الهيرو لو عايزينه زي الصورة */
+  /* background-color: rgba(25, 25, 25, 0.7); */
+  /* backdrop-filter: blur(8px); */
+  /* border-radius: 15px; */
+  /* padding: 2rem; */
+}
+.arrow {
+  position: absolute;
+  transform: translateX(-5.5rem) translateY(1.5rem);
+  /* filter: invert(1); /* لو السهم أسود وعايزينه أبيض */
+}
+
+.heroSub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-size: 3rem;
+  /* لون الاسم: رمادي فاتح */
+  color: #E0E0E0;
+}
+
+.title {
+  font-size: 4rem;
+  /* لون العنوان الرئيسي: بنفسجي زاهي */
+  color: #A36BFF;
+}
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.hireMe {
+  /* زر Hire me: خلفية بنفسجي زاهي، ونص أسود داكن */
+  background-color: #A36BFF;
+  color: #121212; /* نفس لون الخلفية الأساسية لتباين واضح */
+  border-radius: 24px;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* ظل خفيف للنص */
+  /* ظل خفيف للزر نفسه زي اللي في الصورة */
+  box-shadow: 0px 5px 20px rgba(163, 107, 255, 0.4);
+}
+.cv {
+  /* زر Download CV: خلفية رمادي داكن شبه شفاف، ونص رمادي فاتح */
+  background-color: rgba(30, 30, 30, 0.8); /* رمادي داكن شفاف */
+  color: #E0E0E0;
+  border-radius: 24px;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(8px); /* زيادة البلور */
+  border: 1px solid rgba(80, 80, 80, 0.5); /* بوردر خفيف */
+  /* ظل خفيف للزر نفسه */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.aboutMe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+  max-width: 1200px;
+  gap: 10rem;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+.textTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 2rem;
+}
+.aboutName {
+  /* لون About Name: رمادي فاتح */
+  color: #E0E0E0;
+}
+.aboutTitle {
+  /* لون About Title: بنفسجي زاهي */
+  color: #A36BFF;
+}
+.aboutMeParagraf {
+  text-align: justify;
+  /* لون البراجراف: رمادي أفتح قليلاً من الأساسي وشبه شفاف */
+  color: rgba(224, 224, 224, 0.8);
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* **مهم:** هذا السطر بيخلي كل محتوى الـ contactContainer في المنتصف أفقياً */
+  justify-content: space-around; /* ممكن تخليها center لو عايزة المسافات تكون متساوية */
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+.contactTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.contact {
+  display: flex;
+  flex-direction: column; /* **مهم:** ده بيخلي الايميل والسوشيال ميديا يترصوا فوق بعض */
+  align-items: center; /* **مهم:** ده بيسنتر الايميل والسوشيال ميديا أفقياً داخل الـ .contact */
+  /* الأسطر اللي فاتت كانت بتسبب مشاكل، هنشيلها خالص */
+  margin-right: 0;
+  gap: 1rem; /* مسافة بسيطة بين الايميل والسوشيال ميديا */
+}
+.contact h3,
+.contact a {
+  /* لون الكونتاكت: رمادي فاتح */
+  color: #E0E0E0;
+  text-decoration: none;
+}
+.emailAndPhone {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* **مهم:** ده بيسنتر الأيقونة والنص داخل الـ emailAndPhone نفسه */
+  gap: 5px;
+  /* لو عايزة كل بوكس بتاع الايميل/التليفون يكون له خلفية زي اللوجوهات في الصورة */
+  /* background-color: rgba(30, 30, 30, 0.8); */
+  /* padding: 1rem 2rem; */
+  /* border-radius: 10px; */
+  /* border: 1px solid rgba(80, 80, 80, 0.5); */
+  /* box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem; /* مسافة بين الايميل والسوشيال ميديا */
+}
+.socialMedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  /* خلفية أيقونات السوشيال ميديا: رمادي داكن شفاف */
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border: 1px solid rgba(80, 80, 80, 0.5); /* بوردر خفيف */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+}
+.socialMedia img {
+  width: 24px;
+  height: 24px;
+  /* فلتر لعكس ألوان الأيقونات عشان تبقى بيضا على الخلفية الداكنة */
+  filter: brightness(0) invert(1);
+}
+
+footer {
+  /* لون نص الفوتر: رمادي فاتح */
+  color: #A0A0A0;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* الألوان الجديدة لـ h2, ul, li, tech-table, tech-label */
+/* (التي كانت في الـ HTML المتكرر وتم نقلها للـ CSS) */
+h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    color: #A36BFF; /* نفس لون العناوين الرئيسية */
+}
+
+p { /* ده لو عايزة باراجرافات معينة تاخد ستايل مختلف عن aboutMeParagraf */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+    color: rgba(224, 224, 224, 0.8); /* نفس لون البراجرافات العادية */
+}
+
+ul {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+ul li {
+    margin-bottom: 0.3em;
+    line-height: 1.5;
+    color: #E0E0E0; /* لون عناصر القائمة */
+}
+
+.tech-table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: #E0E0E0; /* لون النص داخل الجدول */
+}
+
+.tech-label {
+    font-weight: bold;
+    color: #A36BFF; /* لون Labels داخل الجدول (Field, Tools) */
+}
+
+
+@media (max-width: 1023px) {
+  header {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .heroImg {
+    width: 400px;
+  }
+  .name,
+  .title {
+    font-size: 2rem;
+  }
+  .arrow {
+    display: none;
+  }
+  .aboutMe {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  .textContainer {
+    align-items: center;
+    margin: 0rem 5rem;
+    gap: 1rem;
+  }
+  .aboutName,
+  .aboutTitle {
+    font-size: 2rem;
+  }
+  .light {
+    width: 60px;
+  }
+  .aboutMeImg {
+    width: 400px;
+  }
+  .works {
+    padding: 0;
+  }
+  .worksContainer {
+    padding: 5rem 0rem;
+    gap: 3rem;
+  }
+  .projectTitle {
+    margin-left: 1rem;
+  }
+  .works ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contactContainer {
+    margin: 10rem 5rem;
+    gap: 2rem;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0; /* هذا السطر يجب أن يكون موجوداً هنا أيضاً */
+  }
+
+}
